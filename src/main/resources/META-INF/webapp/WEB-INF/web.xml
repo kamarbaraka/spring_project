@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+</beans>-->
+
+<!--define the servlet and add the dispatcherServlet (front controller implementation)-->
+<servlet>
+    <servlet-name>
+        spring-mvc-dispatcher-servlet
+    </servlet-name>
+    <servlet-class>
+        com.kamar.spring_project.web.servlet.DispatcherServlet
+    </servlet-class>
+
+    <!--    define initial parameters-->
+    <init-param>
+        <param-name>
+            contextConfigLocation
+        </param-name>
+        <param-value>
+            META-INF/webapp/WEB-INF/user-web-context.xml
+        </param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+    <!--        define servlet mapping-->
+    <servlet-mapping>
+        <servlet-name>
+            spring-mvc-dispatcher-servlet
+        </servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</servlet>
